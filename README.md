@@ -1,3 +1,2 @@
 # Gamma simulation
 
-## $\gamma$
