@@ -2,7 +2,7 @@ import gamma_simulation as gs
 import matplotlib.pyplot as plt
 
 result = []
-entries = 10000  # Increase number of events for better statistics
+entries = 1000000  # Increase number of events for better statistics
 
 # Run detection for each gamma ray event
 for _ in range(entries):
@@ -20,5 +20,6 @@ plt.axvline(511, color='red', linestyle='--', linewidth=1.5, label='511 keV')
 plt.axvline(1274, color='red', linestyle='--', linewidth=1.5, label='1274 keV')
 
 plt.legend()
-plt.savefig("simulazione_realistica.png")   
+plt.savefig("simulazione_realistica.png")  
+
 print("\nFine\n")

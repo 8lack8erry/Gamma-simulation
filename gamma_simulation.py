@@ -13,7 +13,7 @@ from scipy.integrate import quad
 Len = 10  # cm (Length of the detector)
 Height = 5  # cm (Height of the detector)
 d_source = 30  # cm (Distance from source to detector)
-resolution = 0.1  # Detector resolution
+resolution = 0.07  # Detector resolution
 density = 3.67  # g/cm^3 (Density of NaI, detector material)
 Z = 47  # Atomic number of NaI (detector material), it is a sort of mean between Z = 11 (Na) and Z = 53 (I)
 
@@ -47,7 +47,7 @@ def distance_in_detector(angle, Len_detector=Len, Height_detector=Height, Distan
     if theta_lim2 <= angle < theta_lim1:
         return ((Height_detector / 2) - Distance_source * np.tan(angle)) / np.sin(angle)
     else:
-        return None  # If outside detector boundaries, return None
+        return None  # If outside detector boundaries, return None    
 
 # Function to calculate the energy of the electron after Compton scattering
 def compton_scattering(energy, angle):
@@ -58,8 +58,8 @@ def compton_scattering(energy, angle):
 #*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
 # Function to calculate the energy of the gamma ray after Compton scattering
-def cross_section_photoelectron(energy, source_Z=Z):
-    cross_section = (5 * 10 ** (11)) * (source_Z ** 5) / ((energy * 10 ** (3)) ** 3.5) # energy conversion from keV to eV
+def cross_section_photoelectron(energy, detector_Z=Z):
+    cross_section = (5 * 10 ** (11)) * (detector_Z ** 5) / ((energy * 10 ** (3)) ** 3.5) # energy conversion from keV to eV
     return cross_section
 
 # Function to calculate the photoelectric cross-section for a given energy in the detector
@@ -96,15 +96,15 @@ def interaction_probability(x, energy):
         mu = 0.1 # cm^-1
     return (1 - np.exp(-x * mu))
 
-def gamma_detection(step = 0.1): 
+def gamma_detection(step=0.1, resolution=resolution, Len_detector=Len, Height_detector=Height, Distance_source=d_source, detector_Z=Z): 
     energy = gamma_emission()
 
     angle = random.uniform(-180 if energy == 1274 else -90, 180 if energy == 1274 else 90)
-    d_detector = distance_in_detector(angle)
+    d_detector = distance_in_detector(angle, Len_detector, Height_detector, Distance_source)
     if d_detector == None: 
         return None
 
-    sigma_photo = cross_section_photoelectron(energy)
+    sigma_photo = cross_section_photoelectron(energy, detector_Z)
     sigma_compton = cross_section_compton(energy)
     total_sigma = sigma_photo + sigma_compton
 
@@ -114,31 +114,45 @@ def gamma_detection(step = 0.1):
 
     detected_energy = []
 
-    for x in np.arange(0, d_detector, step):
+    for r1 in np.arange(0, d_detector, step):
         ip = random.uniform(0, 1)
-        if ip < interaction_probability(x, energy):
+        if ip < interaction_probability(r1, energy):
             eff = random.uniform(0, 1)
+
             if eff < photo_prob: # Photoelectric effect
-                detected_energy.append(detector_resolution(energy))
+                detected_energy.append(detector_resolution(energy, resolution))
             else:  # Compton scattering
                 scattering_angle = random.uniform(0, 180)
                 compton_energy = compton_scattering(energy, scattering_angle)
-                detected_energy.append(detector_resolution(compton_energy))
-                # energy -= compton_energy
-                # while energy > 0:  # Multi-Compton scattering
+                detected_energy.append(detector_resolution(compton_energy, resolution))
+                energy -= compton_energy
 
-                #     angle2 = random.uniform(0, 360)
-                #     d_detector2 = distance_in_detector(angle2) # Questa è sbagliata, serve una distance_in_detector diversa
-                #     if d_detector2 == None: 
-                #         return None
-                #     # Va molto sistemata ed estesa ad effetti di 3-4-... Compton
-                #     ip2 = random.uniform(0, 1)
-                #     if ip < interaction_probability(d_detector2, energy):
-                #         eff = random.uniform(0, 1)
-                #         if eff < photo_prob: # Photoelectric effect
-                #             detected_energy.append(detector_resolution(energy))
-                #         else:  # Compton scattering
-                #             scattering_angle = random.uniform(0, 180)
-                #             compton_energy = compton_scattering(energy, scattering_angle)
-                #             detected_energy.append(detector_resolution(compton_energy))
+                # Multi-Compton (only 2)
+                x = r1 * np.cos(angle)
+                y = r1 * np.sin(angle)
+
+                d_detector2 = 0
+
+                if scattering_angle < np.arctan(y / (Len - x)):
+                    d_detector2 = (Len - x) / np.cos(scattering_angle)
+                elif 180 - scattering_angle < np.arctan(y / x):
+                    d_detector2 = x / np.cos(180 - scattering_angle)
+                else:
+                    if scattering_angle < 90:
+                        d_detector2 = y / np.cos(90 - scattering_angle)
+                    else:
+                        d_detector2 = y / np.cos(scattering_angle - 90)
+                
+                for r2 in np.arange(0, d_detector2, step): 
+                    ip = random.uniform(0, 1)
+                    if ip < interaction_probability(r2, energy):
+                        eff = random.uniform(0, 1)
+
+                        if eff < photo_prob: # Photoelectric effect
+                            detected_energy.append(detector_resolution(energy, resolution))
+                        else:  # Compton scattering
+                            scattering_angle2 = random.uniform(0, 180)
+                            compton_energy = compton_scattering(energy, scattering_angle2)
+                            detected_energy.append(detector_resolution(compton_energy, resolution))
+
     return detected_energy
