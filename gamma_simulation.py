@@ -133,9 +133,9 @@ def gamma_detection(step=0.1, resolution=resolution, Len_detector=Len, Height_de
 
                 d_detector2 = 0
 
-                if scattering_angle < np.arctan(y / (Len - x)):
+                if scattering_angle < np.arctan((Height_detector - y) / (Len_detector - x)):
                     d_detector2 = (Len - x) / np.cos(scattering_angle)
-                elif 180 - scattering_angle < np.arctan(y / x):
+                elif 180 - scattering_angle < np.arctan((Height_detector - y) / x):
                     d_detector2 = x / np.cos(180 - scattering_angle)
                 else:
                     if scattering_angle < 90:
