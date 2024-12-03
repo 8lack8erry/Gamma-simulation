@@ -13,8 +13,9 @@ The code is written in Python and is suitable for analyzing gamma-ray spectra an
 ## Features
 
 - **Spectrum Simulation**: Simulates the energy spectrum of gamma rays emitted from a Na-22 source.
-- **Physics Processes**: Includes Compton scattering, photoelectric effects, and annihilation photons.
-- **Detector Response**: Models detector resolution and electronic noise.
+- **Physics Processes**: Includes Compton scattering, photoelectric effects, and annihilation photons, doesn't include pair production effect.
+- **Detector Response**: Models detector resolution. 
+
 
 ## Example Output
 
