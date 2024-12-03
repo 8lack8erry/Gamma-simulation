@@ -8,8 +8,6 @@ This repository contains code to simulate the gamma-ray emission from a sodium-2
 
 It's not include the pair production effect.
 
-The code is written in Python and is suitable for analyzing gamma-ray spectra and studying energy deposition mechanisms.
-
 ## Features
 
 - **Spectrum Simulation**: Simulates the energy spectrum of gamma rays emitted from a Na-22 source.
