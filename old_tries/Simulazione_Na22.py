@@ -1,8 +1,11 @@
 import gamma_simulation as gs
 import matplotlib.pyplot as plt
 
+print(gs.cross_section_compton(511), gs.cross_section_photoelectron(511))
+
+
 result = []
-entries = 1000000  # Increase number of events for better statistics
+entries = 10000  # Increase number of events for better statistics
 
 # Run detection for each gamma ray event
 for _ in range(entries):
