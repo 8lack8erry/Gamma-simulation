@@ -16,7 +16,7 @@ alpha = 1 / 137  # Fine-structure constant (dimensionless)
 
 # form "A Modern Primer to Particle and Nuclear Physycs" by F.Terranova page 69 - 71
 
-def cross_section_photoelectric(photon: p.Photon, detector: d.Detector) -> float:
+def cross_section_photoelectric(photon: p.Photon, detector) -> float:
     """
     Calculate the photoelectric cross-section for a photon interacting with the detector material.
 
@@ -32,7 +32,7 @@ def cross_section_photoelectric(photon: p.Photon, detector: d.Detector) -> float
         c = 0.665 * (3 / 2) * alpha ** 4 * bn  # Empirical constant for high-energy range
         return c * detector.Z ** 5 / epsilon
 
-def cross_section_compton(photon: p.Photon, detector: d.Detector) -> float:
+def cross_section_compton(photon: p.Photon, detector) -> float:
     """
     Calculate the Compton scattering cross-section for a photon interacting with the detector material.
 
@@ -98,7 +98,7 @@ def interaction_probability(photon: p.Photon, distance: float) -> float:
             mu = attenuation_data[attenuation_energy]
             return 1 - np.exp(- mu * distance)
 
-def which_interaction(photon: p.Photon, detector: d.Detector)-> str:
+def which_interaction(photon: p.Photon, detector)-> str:
     sigma_pe = cross_section_photoelectric(photon, detector)
     sigma_com = cross_section_compton(photon, detector) 
     sigma_tot = sigma_pe + sigma_com
@@ -118,21 +118,25 @@ def photoelectric_effect(photon: p.Photon)-> p.Electron:
     """
     energy = photon.energy
     photon.energy = 0
-    return p.Electron(energy)
+    return p.Electron(energy, photon.direction, photon.position)
 
-def compton_scattering(photon: p.Photon)-> p.Electron:
+def compton_scattering(photon: p.Photon, scattering_angle: float)-> p.Electron:
     """
     Simulate Compton scattering, producing a scattered photon and an electron.
 
     :param photon: Incident photon object.
     :return: Tuple containing the scattered photon and the electron.
     """
-    theta = photon.compton_angle()  # Scattering angle in radians
+    theta = scattering_angle
     compton_energy_gamma = photon.compton_scattering(theta)
     compton_energy_electron = photon.energy - photon.compton_scattering(theta)  # Energy after scattering
 
     photon.energy = compton_energy_gamma  # Update photon energy
-    return p.Electron(compton_energy_electron)  # Create an electron with the transferred energy
+
+    phi = random.uniform(0, 2 * np.pi)
+    electron_direction = np.array([np.sin(scattering_angle) * np.cos(phi), np.sin(scattering_angle) * np.sin(phi),  np.cos(scattering_angle)])
+
+    return p.Electron(compton_energy_electron, electron_direction, photon.position)  # Create an electron with the transferred energy
 
 class Interaction:
     def __init__(self, type: str):
@@ -159,7 +163,7 @@ class Interaction:
         """
         print("interaction:" + self.type)
     
-    def cross_section(self, photon: p.Photon, detector: d.Detector) -> float:
+    def cross_section(self, photon: p.Photon, detector) -> float:
         """
         Calculate the cross-section for the specified interaction type.
 
@@ -182,4 +186,4 @@ class Interaction:
         if self.type == "photoelectric":
             return photoelectric_effect(photon)
         if self.type == "compton":
-            return compton_scattering(photon)
+            return compton_scattering(photon, photon.compton_angle())
