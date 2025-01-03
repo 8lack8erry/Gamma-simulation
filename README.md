@@ -7,10 +7,6 @@ This repository contains a comprehensive simulation framework for modeling and a
 - [Implemented Classes](#implemented-classes)
 - [Simulation Experiments](#simulation-experiments)
 - [Visualization](#visualization)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Examples](#examples)
-- [License](#license)
 
 ## Overview
 This simulation models the interaction of gamma rays using key principles of Compton scattering. It provides tools to simulate different experimental setups, including spectroscopy, coincidence measurements, and detailed scattering experiments, allowing for visualization and deeper insights into gamma-ray behavior.
@@ -57,9 +53,3 @@ The project includes a 3D visualization feature that allows users to:
 - Visualize detectors and the target in a 3D environment.
 - Understand the spatial distribution of interactions.
 
-## Installation
-Clone this repository and install any required dependencies:
-```bash
-git clone https://github.com/8lack8erry/Gamma-simulation.git
-cd Gamma-simulation
-pip install -r requirements.txt
