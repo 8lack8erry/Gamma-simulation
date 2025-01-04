@@ -38,7 +38,23 @@ The cross-section for the photoelectric effect is computed using a formula invol
 $\epsilon = \frac{E_{\gamma}}{m_{e}}$ where:
   - $E_{\gamma}$ is the photon energy.
   - $m_{e}$ is the electron rest mass energy.
-    
+
+The Photoelectric cross-section is computed using:
+
+$$
+\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5}
+$$
+
+Where: 
+- $\epsilon = \frac{E_{\gamma}}{m_{e}}$
+  - $E_{\gamma}$ is the **photon energy**.
+  - $m_{e}$ is the **electron rest mass energy**.
+- $Z$ is the **atomic number** of the detector.
+- $c$ is a constant that depends by the photon's energy:
+  - c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b for $\epsilon << 1$ (low-energy photons)
+    - $alpha$ is the **fine-structure constant** $\propto \frac{1}{137}$
+    - $b$ is the symbol for the barn unit $=10^{-28}$ m$^2$
+ 
 For $\epsilon << 1$ (low-energy photons):
 
 $$
