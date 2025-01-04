@@ -144,8 +144,6 @@ This class allows for the modeling photoelectric effect and Compton scattering, 
 
 ## Simulation Experiments
 
-The framework supports three primary types of experiments:
-
 1. **Spectroscopy of Na-22 Spectrum**: Simulates the energy spectrum emitted by a Na-22 gamma-ray source, modeling the detection of characteristic energy peaks.
 <p align="center">
   <img src="plots/spettroscopy_franco.png" alt="Example of spettroscopy of Na-22 Spectrum" width="600">
