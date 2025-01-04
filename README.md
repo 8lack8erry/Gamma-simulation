@@ -32,11 +32,40 @@ In addition, the framework integrates 3D visualization tools. These tools allow 
 ### 1. Photoelectric Effect
 - **Description:** A photon is completely absorbed by an atom, ejecting an electron with energy equal to the photon's energy minus the binding energy of the electron.
 - **Cross-section Calculation:** The cross-section for the photoelectric effect is computed using a formula involving the atomic number of the detector material and the photon's energy. (form "A Modern Primer to Particle and Nuclear Physycs" by F.Terranova page 69)
+  \[
+\epsilon = \frac{E_{\text{photon}}}{m_e}
+\]
+Where:
+- \( E_{\text{photon}} \) is the photon energy.
+- \( m_e \) is the electron rest mass energy.
+
+For \( \epsilon \leq 1 \) (low-energy photons):
+\[
+\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5}, \quad \text{where} \quad c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b_n
+\]
+
+For \( \epsilon > 1 \) (high-energy photons):
+\[
+\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-1}, \quad \text{where} \quad c = 0.665 \cdot \frac{3}{2} \cdot \alpha^4 \cdot b_n
+\]
   
 ### 2. Compton Scattering
 - **Description:** A photon collides with an electron, transferring part of its energy to the electron, which is ejected from the atom. The photon scatters with reduced energy and changes direction.
 - **Cross-section Calculation:** The cross-section for Compton scattering is computed based on the Thomson scattering cross-section and other parameters like the photon energy and the scattering angle.
 (form "A Modern Primer to Particle and Nuclear Physycs" by F.Terranova page 71)
+  The Thomson scattering cross-section is given by:
+\[
+\sigma_{\text{Thompson}} = \frac{8}{3} \pi r_e^2
+\]
+Where \( r_e \) is the classical electron radius.
+
+The Compton cross-section is computed using:
+\[
+\sigma_{\text{Compton}} = c \cdot Z \left( \frac{(1 + \epsilon)}{\epsilon^2} \left( \frac{2(1 + \epsilon)}{1 + 2\epsilon} - \frac{\ln(1 + 2\epsilon)}{\epsilon} \right) + \frac{\ln(1 + 2\epsilon)}{2\epsilon} - \frac{1 + 3\epsilon}{(1 + 2\epsilon)^2} \right)
+\]
+Where:
+- \( c = \frac{3}{4} \sigma_{\text{Thompson}} \)
+- \( \epsilon = \frac{E_{\text{photon}}}{m_e} \)
 
 ---
 
