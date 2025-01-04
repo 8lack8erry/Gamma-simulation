@@ -41,17 +41,15 @@ $\epsilon = \frac{E_{\gamma}}{m_{e}}$ where:
 
 The Photoelectric cross-section is computed using:
 
+For $\epsilon << 1 \text{(low-energy photons)}$:
 $$
-\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5} \hspace{1.5cm} \epsilon << 1 \text{(low-energy photons)}
+\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5} \hspace{1.5cm} c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b
 $$
+
+For $\epsilon >> 1 \text{(high-energy photons)}$:
+
 $$
-c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b
-$$
-$$
-\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-1} \hspace{1.5cm} \epsilon << 1 \text{(high-energy photons)}
-$$
-$$
-c =  0.665 \cdot \frac{3}{2} \cdot \alpha^4 \cdot b
+\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-1} \hspace{1.5cm} c =  0.665 \cdot \frac{3}{2} \cdot \alpha^4 \cdot b
 $$
 
 Where: 
