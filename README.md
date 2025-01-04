@@ -40,15 +40,15 @@ In addition, the framework integrates 3D visualization tools. These tools allow 
     
   For $\epsilon \leq 1$ (low-energy photons):
 
-$$
-\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5}, \quad \text{where} \quad c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b_n
-$$
+  $$
+  \sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5}, \quad \text{where} \quad c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b_n
+  $$
   
   For $\epsilon > 1 $ (high-energy photons):
   
-$$
-\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-1}, \quad \text{where} \quad c = 0.665 \cdot \frac{3}{2} \cdot \alpha^4 \cdot b_n
-$$
+  $$
+  \sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-1}, \quad \text{where} \quad c = 0.665 \cdot \frac{3}{2} \cdot \alpha^4 \cdot b_n
+  $$
   
 ### 2. Compton Scattering
 - **Description:** A photon collides with an electron, transferring part of its energy to the electron, which is ejected from the atom. The photon scatters with reduced energy and changes direction.
