@@ -42,7 +42,16 @@ $\epsilon = \frac{E_{\gamma}}{m_{e}}$ where:
 The Photoelectric cross-section is computed using:
 
 $$
-\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5}
+\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5} \hspace{1.5cm} \epsilon << 1 \text{(low-energy photons)}
+$$
+$$
+c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b
+$$
+$$
+\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-1} \hspace{1.5cm} \epsilon << 1 \text{(high-energy photons)}
+$$
+$$
+c =  0.665 \cdot \frac{3}{2} \cdot \alpha^4 \cdot b
 $$
 
 Where: 
@@ -50,14 +59,8 @@ Where:
   - $E_{\gamma}$ is the **photon energy**.
   - $m_{e}$ is the **electron rest mass energy**.
 - $Z$ is the **atomic number** of the detector.
-- $c$ is a constant that depends by the photon's energy:
-  
-  - $c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b \hspace{1.5cm} \epsilon << 1$ (low-energy photons).
-    
-  - $c = 0.665 \cdot \frac{3}{2} \cdot \alpha^4 \cdot b \hspace{1.5cm} \epsilon >> 1$ (high-energy photons).
- 
-    - $\alpha \approx \frac{1}{137}$ is the **fine-structure constant**.
-    - $b=10^{-28}$ m $^2$ is the symbol for the **barn** unit.
+- $\alpha \approx \frac{1}{137}$ is the **fine-structure constant**.
+- $b=10^{-28}$ m $^2$ is the symbol for the **barn** unit.
  
 ### 2. Compton Scattering
 A photon collides with an electron, transferring part of its energy to the electron, which is ejected from the atom. The photon scatters with reduced energy and changes direction.
