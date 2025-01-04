@@ -89,6 +89,7 @@ Where $r_e = 2.817 \cdot 10^{-15}$ m is the **classical electron radius**.
 <div align="center">
   <img src="utilities/CrossSections.png" alt="Cross Section" width="480">
 </div>
+
 ---
 
 ## Implemented Classes
