@@ -37,12 +37,13 @@ The cross-section for the photoelectric effect is computed using a formula invol
 
 The Photoelectric cross-section is computed using:
 
-For $\epsilon << 1 \text{(low-energy photons)}$:
+For $\epsilon << 1$ (low-energy photons):
+
 $$
 \sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5} \hspace{1.5cm} c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b
 $$
 
-For $\epsilon >> 1 \text{(high-energy photons)}$:
+For $\epsilon >> 1$ (high-energy photons):
 
 $$
 \sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-1} \hspace{1.5cm} c =  0.665 \cdot \frac{3}{2} \cdot \alpha^4 \cdot b
