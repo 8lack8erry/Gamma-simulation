@@ -73,8 +73,8 @@ $$
 $$
 
 Where:
-- \( c = \frac{3}{4} \sigma_{\text{Thompson}} \)
-- \( \epsilon = \frac{E_{\gamma}}{m_e} \)
+- $c = \frac{3}{4} \sigma_{\text{Thompson}}$
+- $\epsilon = \frac{E_{\gamma}}{m_e}$
 
 ---
 
