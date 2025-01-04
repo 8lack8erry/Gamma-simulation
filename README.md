@@ -215,5 +215,5 @@ The project includes 3D visualization capabilities that allow users to:
 - Understand the spatial distribution and dynamics of interactions within the simulated environment.
 
 <p align="center">
-  <img src="plots/coincidence_3D_visualization.png" alt="Example coincidence measurment (3D)" width="800">
+  <img src="plots/coincidence_3D_visualization.png" alt="Example coincidence measurment (3D)" width="900">
 </p>
