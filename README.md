@@ -1,4 +1,4 @@
-# Gamma Scattering Simulation
+8# Gamma Scattering Simulation
 
 This repository provides a comprehensive simulation framework for modeling and analyzing gamma-ray interactions, particularly focusing on Compton scattering experiments. The project is structured with modular classes and functions to facilitate various experimental setups and visualizations.
 
