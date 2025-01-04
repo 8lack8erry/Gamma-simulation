@@ -35,7 +35,7 @@ A photon is completely absorbed by an atom, ejecting an electron with energy equ
 #### Cross-section calculation
 The cross-section for the photoelectric effect is computed using a formula involving the atomic number of the detector material and the photon's energy. (form "A Modern Primer to Particle and Nuclear Physycs" by F.Terranova page 69).
 
-The Photoelectric cross-section is computed using:
+The **Photoelectric cross-section** is computed using:
 
 For $\epsilon << 1$ (low-energy photons):
 
@@ -64,7 +64,7 @@ A photon collides with an electron, transferring part of its energy to the elect
 The cross-section for Compton scattering is computed based on the Thomson scattering cross-section and other parameters like the photon energy and the scattering angle.
 (form "A Modern Primer to Particle and Nuclear Physycs" by F.Terranova page 71).
 
-The Compton cross-section is computed using:
+The **Compton cross-section** is computed using:
 
 $$
 \sigma_{\text{Compton}} = c \cdot Z \left( \frac{(1 + \epsilon)}{\epsilon^2} \left( \frac{2(1 + \epsilon)}{1 + 2\epsilon} - \frac{\ln(1 + 2\epsilon)}{\epsilon} \right) + \frac{\ln(1 + 2\epsilon)}{2\epsilon} - \frac{1 + 3\epsilon}{(1 + 2\epsilon)^2} \right)
