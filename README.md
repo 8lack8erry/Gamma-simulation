@@ -27,19 +27,6 @@ In addition, the framework integrates 3D visualization tools. These tools allow 
 
 ---
 
-## Implemented Classes
-
-The core components of the simulation are encapsulated in several classes:
-
-- **Photon**: Represents a gamma-ray photon, tracking its energy, position, and direction.
-- **Electron**: Models an electron that interacts with photons during scattering events.
-- **Detector**: Simulates a detector that records the energy and direction of incoming photons.
-- **Source**: Represents a gamma-ray source, such as Na-22, used in various experiments.
-- **Target**: Models the material medium where Compton scattering occurs.
-- **Interaction**: Implements the physics governing Compton scattering and other photon interactions.
-
----
-
 ## Photon Interaction Types
 
 ### 1. Photoelectric Effect
@@ -50,6 +37,19 @@ The core components of the simulation are encapsulated in several classes:
 - **Description:** A photon collides with an electron, transferring part of its energy to the electron, which is ejected from the atom. The photon scatters with reduced energy and changes direction.
 - **Cross-section Calculation:** The cross-section for Compton scattering is computed based on the Thomson scattering cross-section and other parameters like the photon energy and the scattering angle.
 (form "A Modern Primer to Particle and Nuclear Physycs" by F.Terranova page 71)
+
+---
+
+## Implemented Classes
+
+The core components of the simulation are encapsulated in several classes:
+
+- **Photon**: Represents a gamma-ray photon, tracking its energy, position, and direction.
+- **Electron**: Models an electron that interacts with photons during scattering events.
+- **Detector**: Simulates a detector that records the energy and direction of incoming photons.
+- **Source**: Represents a gamma-ray source, such as Na-22, used in various experiments.
+- **Target**: Models the material medium where Compton scattering occurs.
+- **Interaction**: Implements the physics governing Compton scattering and other photon interactions.
 
 ---
 
@@ -91,17 +91,11 @@ Represents a cylindrical gamma-ray detector with customizable position, size, an
 
 - **Methods**:
     - `info()`: Prints position, size, and energy resolution.
-
     - `will_be_in_detector(point: np.ndarray, direction: np.ndarray) -> bool`: Determines if a particle starting at a given point with a specified direction will hit the detector.
-
     - `is_in_detector(point: np.ndarray) -> bool`: Checks if a given point is inside the detector's volume.
-
     - `resolution(energy: float) -> float`: Simulates detector energy resolution by adding Gaussian noise to the true energy.
-
     - `detection(electron: Electron) -> float`: Simulates the energy detected from an electron interacting with the detector.
-
     - `draw_detector_3D(ax, axis='y', color='blue', alpha=0.5, label=None)`:Draws a 3D representation of the detector.
-    
     - `draw_detector_2D(ax, plane='xy', color='blue', label=None)`:Draws a 2D projection of the detector on a specified plane.
 
 ### 4. `Target`
