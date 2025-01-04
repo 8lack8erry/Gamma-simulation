@@ -5,6 +5,7 @@ This repository provides a comprehensive simulation framework for modeling and a
 ## Table of Contents
 
 - [Overview](#overview)
+- [Photon Interaction Types](#photon_interaction_types)
 - [Implemented Classes](#implemented-classes)
 - [Simulation Experiments](#simulation-experiments)
 - [Visualization](#visualization)
