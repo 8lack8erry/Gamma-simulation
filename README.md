@@ -32,22 +32,17 @@ In addition, the framework integrates 3D visualization tools. These tools allow 
 ### 1. Photoelectric Effect
 - **Description:** A photon is completely absorbed by an atom, ejecting an electron with energy equal to the photon's energy minus the binding energy of the electron.
 - **Cross-section Calculation:** The cross-section for the photoelectric effect is computed using a formula involving the atomic number of the detector material and the photon's energy. (form "A Modern Primer to Particle and Nuclear Physycs" by F.Terranova page 69)
-  \[
-\epsilon = \frac{E_{\text{photon}}}{m_e}
-\]
-Where:
-- \( E_{\text{photon}} \) is the photon energy.
-- \( m_e \) is the electron rest mass energy.
-
-For \( \epsilon \leq 1 \) (low-energy photons):
-\[
-\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5}, \quad \text{where} \quad c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b_n
-\]
-
-For \( \epsilon > 1 \) (high-energy photons):
-\[
-\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-1}, \quad \text{where} \quad c = 0.665 \cdot \frac{3}{2} \cdot \alpha^4 \cdot b_n
-\]
+  $\epsilon = \frac{E_{\gamma}}{m_e}$ where:
+  - $ E_{\gamma}$ is the photon energy.
+  - $ m_e $ is the electron rest mass energy.
+  For $\epsilon \leq 1$ (low-energy photons):
+  $$
+  \sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5}, \quad \text{where} \quad c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b_n
+  $$
+  For $\epsilon > 1 $ (high-energy photons):
+  $$
+  \sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-1}, \quad \text{where} \quad c = 0.665 \cdot \frac{3}{2} \cdot \alpha^4 \cdot b_n
+  $$
   
 ### 2. Compton Scattering
 - **Description:** A photon collides with an electron, transferring part of its energy to the electron, which is ejected from the atom. The photon scatters with reduced energy and changes direction.
