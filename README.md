@@ -45,7 +45,7 @@ $$
 \sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5}, \quad \text{where} \quad c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b_n
 $$
   
-For $\epsilon > 1 $ (high-energy photons):
+For $\epsilon > 1$ (high-energy photons):
   
 $$
 \sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-1}, \quad \text{where} \quad c = 0.665 \cdot \frac{3}{2} \cdot \alpha^4 \cdot b_n
