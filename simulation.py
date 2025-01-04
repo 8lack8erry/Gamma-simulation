@@ -62,7 +62,7 @@ def visualization_3D(fileNamePNG, detectors, photons, target=None):
     # 3D Plot of photon hit points
     fig = plt.figure(figsize=(16, 12))
     ax = fig.add_subplot(221, projection='3d')
-    ax.scatter(hit_points[:, 0], hit_points[:, 1], hit_points[:, 2], s=20, color='red', marker='x', label='Hit Points')  # Red X
+    ax.scatter(hit_points[:, 0], hit_points[:, 1], hit_points[:, 2], s=10, color='red', marker='x', label='Hit Points')  # Red X
     [detector.draw_detector_3D(ax) for detector in detectors]  # Draw 3D detectors
     if target:
         target.draw_target_3D(ax)  # Draw 3D target if available
