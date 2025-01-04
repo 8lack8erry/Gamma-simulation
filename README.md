@@ -104,7 +104,7 @@ Represents a cylindrical gamma-ray detector with customizable position, size, an
     
     - `draw_detector_2D(ax, plane='xy', color='blue', label=None)`:Draws a 2D projection of the detector on a specified plane.
 
-### 4. Target
+### 4. `Target`
 ```python
 target = Target(position: list[float], radius: float, width: float, density: float = 11.34, Z: float = 82)
 ```
@@ -120,7 +120,7 @@ Represents a cylindrical target material with defined position, dimensions, dens
     - `draw_target_3D(ax, axis='y', color='grey', alpha=0.5, label=None)`: Draws a 3D representation of the cylindrical target along a specified axis.
     - `draw_target_2D(ax, plane='xy', color='grey', label=None)`: Draws a 2D projection of the target on a specified plane.
 
-### 5. Radioactive source
+### 5. `Radioactive source`
 ```python
 source = Source(energies: dict = {511: 0.903, 1274: 0.097}, position: list[float] = [0, 0, 0], activity: int = 127000)
 ```
@@ -134,7 +134,7 @@ Simulates a radioactive source emitting gamma photons. It allows customization o
     -`photon_emission(number_of_photons: int = 1) -> list`: Generates a list of `Photon` objects with random energies and directions.
     -`testing_photons(self, number_of_photons: int = 1, direction: list = [0, 1, 0]) -> list`: Generates `Photon` objects with fixed directions and random energies.
 
-### 6. Interaction
+### 6. `Interaction`
 ```python
 interaction = Interaction(type: str)
 ```
