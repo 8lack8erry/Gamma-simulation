@@ -36,9 +36,13 @@ In addition, the framework integrates 3D visualization tools. These tools allow 
   $\epsilon = \frac{E_{\gamma}}{m_e}$ where:
   - $E_{\gamma}$ is the photon energy.
     
-  - $m_e $ is the electron rest mass energy.
+  - $m_e$ is the electron rest mass energy.
     
   For $\epsilon \leq 1$ (low-energy photons):
+
+$$
+\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5}
+$$
   
   $$
   \sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5}, \quad \text{where} \quad c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b_n
