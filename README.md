@@ -51,36 +51,17 @@ Where:
   - $m_{e}$ is the **electron rest mass energy**.
 - $Z$ is the **atomic number** of the detector.
 - $c$ is a constant that depends by the photon's energy:
-  - c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b for $\epsilon << 1$ (low-energy photons)
-    - $alpha$ is the **fine-structure constant** $\propto \frac{1}{137}$
-    - $b$ is the symbol for the barn unit $=10^{-28}$ m$^2$
+  - $c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b$ for $\epsilon << 1$ (low-energy photons).
+  - $c = 0.665 \cdot \frac{3}{2} \cdot \alpha^4 \cdot b_n$ For $\epsilon >> 1$ (high-energy photons).
+    - $alpha \propto \frac{1}{137}$ is the **fine-structure constant**.
+    - $b=10^{-28}$ m$^2$ is the symbol for the **barn** unit.
  
-For $\epsilon << 1$ (low-energy photons):
-
-$$
-\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-3.5}, \quad \text{where} \quad c = 0.665 \cdot \sqrt{32} \cdot \alpha^4 \cdot b_n
-$$
-  
-For $\epsilon >> 1$ (high-energy photons):
-  
-$$
-\sigma_{\text{photoelectric}} = c \cdot Z^5 \cdot \epsilon^{-1}, \quad \text{where} \quad c = 0.665 \cdot \frac{3}{2} \cdot \alpha^4 \cdot b_n
-$$
-  
 ### 2. Compton Scattering
 A photon collides with an electron, transferring part of its energy to the electron, which is ejected from the atom. The photon scatters with reduced energy and changes direction.
 
 #### Cross-section calculation
 The cross-section for Compton scattering is computed based on the Thomson scattering cross-section and other parameters like the photon energy and the scattering angle.
 (form "A Modern Primer to Particle and Nuclear Physycs" by F.Terranova page 71).
-
-The Thomson scattering cross-section is given by:
-
-$$
-\sigma_{\text{Thompson}} = \frac{8}{3} \pi r_e^2
-$$
-
-Where $r_e$ is the classical electron radius.
 
 The Compton cross-section is computed using:
 
@@ -89,8 +70,20 @@ $$
 $$
 
 Where:
-- $c = \frac{3}{4} \sigma_{\text{Thompson}}$
 - $\epsilon = \frac{E_{\gamma}}{m_e}$
+  - $E_{\gamma}$ is the **photon energy**.
+  - $m_{e}$ is the **electron rest mass energy**.
+- $Z$ is the **atomic number** of the detector.
+- $c$ is a constant: $c = \frac{3}{4} \sigma_{\text{Thompson}}$.
+
+The **Thomson scattering cross-section** is given by:
+
+$$
+\sigma_{\text{Thompson}} = \frac{8}{3} \pi r_e^2
+$$
+
+Where $r_e = 2.817 \cdot 10^{-15}$ m is the **classical electron radius**.
+
 
 ---
 
