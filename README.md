@@ -86,7 +86,7 @@ $$
 Where $r_e = 2.817 \cdot 10^{-15}$ m is the **classical electron radius**.
 
 <div align="center">
-  <img src="utilities/CrossSections.png" alt="Cross Section" width="550">
+  <img src="utilities/CrossSections.png" alt="Cross Section" width="500">
 </div>
 ---
 
@@ -116,7 +116,7 @@ Represents a photon with energy, direction, and position.
   - `klein_nishina(angle)`: Compute the differential cross-section for Compton scattering.
   - `compton_angle()`: Generate random scattering angles using rejection sampling, using the Klein-Nishina probability density function.
   <div align="center">
-    <img src="Compton_angles_distributions/angle_distributions_Klein_Nishina.png" alt="Klein-Nishina probability density function" width="650">
+    <img src="Compton_angles_distributions/angle_distributions_Klein_Nishina.png" alt="Klein-Nishina probability density function" width="750">
   </div>
 
 ### 2. `Electron`
