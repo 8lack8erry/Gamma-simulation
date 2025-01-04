@@ -199,7 +199,7 @@ This class allows for the modeling photoelectric effect and Compton scattering, 
   <img src="plots/spettroscopy_franco.png" alt="Example of spettroscopy of Na-22 Spectrum" width="600">
 </p>
 
-2. **Coincidence Measurement**: Simulates experiments where two detectors simultaneously measure correlated photon events, such as those from pair production.
+2. **Coincidence Measurement**: Simulates experiments where two detectors simultaneously measure correlated photon events, such as those from pair production. One detector is the gate and the other is the spettroscopy.
 <p align="center">
   <img src="plots/coincidence_spectrum.png" alt="Example of coincidence measurment (spectrum)" width="600">
 </p>
@@ -215,5 +215,5 @@ The project includes 3D visualization capabilities that allow users to:
 - Understand the spatial distribution and dynamics of interactions within the simulated environment.
 
 <p align="center">
-  <img src="plots/coincidence_3D_visualization.png" alt="Example coincidence measurment (3D)" width="600">
+  <img src="plots/coincidence_3D_visualization.png" alt="Example coincidence measurment (3D)" width="800">
 </p>
