@@ -14,7 +14,7 @@ This repository provides a comprehensive simulation framework for modeling and a
 The simulation framework models gamma-ray interactions specifically for low-energy photons characteristic of the Na-22 spectrum. This radioactive isotope decays via beta-plus (β⁺) decay, producing a positron that subsequently annihilates with an electron, emitting two 511 keV gamma photons in opposite directions. Additionally, Na-22 emits a 1274 keV gamma photon following its decay to an excited state of neon-22. 
 
 <div align="center">
-  <img src="utilities/Decay-scheme-for-22-Na.png" alt="Na-22 decay scheme" width="250">
+  <img src="utilities/Decay-scheme-for-22-Na.png" alt="Na-22 decay scheme" width="350">
 </div>
 
 Given the energy range of interest, the simulation focuses on two dominant interaction processes: **Compton scattering** and **photoelectric effect**, omitting pair production due to its higher energy threshold. The framework provides an environment for simulating real-world particle interactions, supporting key experimental configurations:
@@ -66,7 +66,7 @@ Represents a photon with energy, direction, and position.
   - `klein_nishina(angle)`: Compute the differential cross-section for Compton scattering.
   - `compton_angle()`: Generate random scattering angles using rejection sampling, using the Klein-Nishina probability density function.
   <div align="center">
-    <img src="Compton_angles_distributions/angle_distributions_Klein_Nishina.png" alt="Klein-Nishina probability density function" width="350">
+    <img src="Compton_angles_distributions/angle_distributions_Klein_Nishina.png" alt="Klein-Nishina probability density function" width="450">
   </div>
 
 ### 2. `Electron`
@@ -148,12 +148,12 @@ The framework supports three primary types of experiments:
 
 1. **Spectroscopy of Na-22 Spectrum**: Simulates the energy spectrum emitted by a Na-22 gamma-ray source, modeling the detection of characteristic energy peaks.
 <p align="center">
-  <img src="plots/spettroscopy_franco.png" alt="Example of spettroscopy of Na-22 Spectrum" width="400">
+  <img src="plots/spettroscopy_franco.png" alt="Example of spettroscopy of Na-22 Spectrum" width="600">
 </p>
 
 2. **Coincidence Measurement**: Simulates experiments where two detectors simultaneously measure correlated photon events, such as those from pair production.
 <p align="center">
-  <img src="plots/coincidence_spectrum.png" alt="Example of coincidence measurment (spectrum)" width="400">
+  <img src="plots/coincidence_spectrum.png" alt="Example of coincidence measurment (spectrum)" width="600">
 </p>
 
 3. **Compton Scattering on a Target**: Models the scattering of photons off a target material, analyzing the energy and angular distribution of the scattered photons.
@@ -167,5 +167,5 @@ The project includes 3D visualization capabilities that allow users to:
 - Understand the spatial distribution and dynamics of interactions within the simulated environment.
 
 <p align="center">
-  <img src="plots/coincidence_3D_visualization.png" alt="Example coincidence measurment (3D)" width="400">
+  <img src="plots/coincidence_3D_visualization.png" alt="Example coincidence measurment (3D)" width="600">
 </p>
