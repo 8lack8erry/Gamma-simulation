@@ -30,10 +30,6 @@ In addition, the framework integrates 3D visualization tools. These tools allow 
 
 ## Photon Interaction Types
 
-$\epsilon = \frac{E_{\gamma}}{m_{e}}$
-  - $E_{\gamma}$ is the **photon energy**.
-  - $m_{e}$ is the **electron rest mass energy**.
-
 ### 1. Photoelectric Effect
 A photon is completely absorbed by an atom, ejecting an electron with energy equal to the photon's energy minus the binding energy of the electron.
 
@@ -55,6 +51,9 @@ $$
 $$
 
 Where: 
+- $\epsilon = \frac{E_{\gamma}}{m_{e}}$
+  - $E_{\gamma}$ is the **photon energy**.
+  - $m_{e}$ is the **electron rest mass energy**.
 - $Z$ is the **atomic number** of the detector.
 - $\alpha \approx \frac{1}{137}$ is the **fine-structure constant**.
 - $b=10^{-28}$ m $^2$ is the symbol for the **barn** unit.
