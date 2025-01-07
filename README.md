@@ -153,9 +153,9 @@ Simulates a radioactive source emitting gamma photons. It allows customization o
       
     - `random_directions(number_of_photons: int = 1) -> np.ndarray`: Generates random photon directions as unit vectors.
       
-    -`photon_emission(number_of_photons: int = 1) -> list`: Generates a list of `Photon` objects with random energies and directions.
+    - `photon_emission(number_of_photons: int = 1) -> list`: Generates a list of `Photon` objects with random energies and directions.
 
-    -`testing_photons(self, number_of_photons: int = 1, direction: list = [0, 1, 0]) -> list`: Generates `Photon` objects with fixed directions and random energies.
+    - `testing_photons(self, number_of_photons: int = 1, direction: list = [0, 1, 0]) -> list`: Generates `Photon` objects with fixed directions and random energies.
 
 ### 4. `Detector`
 ```python
