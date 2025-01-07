@@ -37,6 +37,9 @@ A photon is completely absorbed by an atom, ejecting an electron with energy equ
 The cross-section for the photoelectric effect is computed using a formula involving the atomic number of the detector material and the photon's energy. (form "A Modern Primer to Particle and Nuclear Physycs" by F.Terranova page 69).
 
 The **Photoelectric cross-section** is computed using:
+$\epsilon = \frac{E_{\gamma}}{m_{e}}$
+  - $E_{\gamma}$ is the **photon energy**.
+  - $m_{e}$ is the **electron rest mass energy**.
 
 For $\epsilon << 1$ (low-energy photons):
 
@@ -51,9 +54,6 @@ $$
 $$
 
 Where: 
-- $\epsilon = \frac{E_{\gamma}}{m_{e}}$
-  - $E_{\gamma}$ is the **photon energy**.
-  - $m_{e}$ is the **electron rest mass energy**.
 - $Z$ is the **atomic number** of the detector.
 - $\alpha \approx \frac{1}{137}$ is the **fine-structure constant**.
 - $b=10^{-28}$ m $^2$ is the symbol for the **barn** unit.
