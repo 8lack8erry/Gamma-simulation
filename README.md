@@ -147,7 +147,7 @@ Simulates a radioactive source emitting gamma photons. It allows customization o
 
 - **Attributes**:`energies`, `position`, `activity`.
 - **Methods**:
-    -`info()`: Prints possible photon energies, position, and activity.
+    - `info()`: Prints possible photon energies, position, and activity.
 
     - `random_energies(number_of_photons: int = 1) -> np.ndarray`: Generates random photon energies based on the source's energy probabilities.
       
