@@ -6,7 +6,7 @@ import experiments as e
 import source as s
 
 # File path to save the output spectrum plot
-file_path = "/mnt/c/Users/User/Desktop/info/Compton/Simulation/plots/"
+file_path = "/mnt/c/Users/User/Desktop/info/Gamma-simulation/plots/"
 
 # Function to plot the energy spectrum
 def plot_energy_spectrum(energies, fileNamePNG, bins=100, title="Energy Spectrum"):
@@ -118,17 +118,14 @@ number_of_photons = 1000000  # Number of photons to simulate
 # Simulate spectroscopy measurements and plot the energy spectrum 
 energies = e.spectroscopy_measurement(number_of_photons, ugo, True)
 plot_energy_spectrum(energies, file_path + "spettroscopy_ugo.png", 10000)
-print("ugo")
 energies = e.spectroscopy_measurement(number_of_photons, franco, True)
 plot_energy_spectrum(energies, file_path + "spettroscopy_franco.png", 10000)
-print("franco")
 
 print("End spettroscopy")
 
 # Simulate coincidence measurement and plot the energy spectrum
 energies = e.coincidence_measurement(number_of_photons, ugo, franco, True)
 plot_energy_spectrum(energies, file_path + "coincidence_spectrum.png", 10000)
-print("spectrum")
 
 # Simulate photon emission from a source
 source = s.Source()  # Create a source object
@@ -137,7 +134,6 @@ photons = source.photon_emission(1000)  # Simulate photon emission
 
 # Visualize the 3D photon hit positions and detectors for coincidence measurement
 visualization_3D(file_path + "coincidence_3D_visualization.png", [ugo, franco], photons)
-print("3D")
 print("End coicidence")
 
 # Simulate the Compton scattering experiment
@@ -150,6 +146,6 @@ photons = e.target_scattering(1000, angle, target, ugo, franco, True)  # Simulat
 # Visualize the 3D photon hit positions and detectors for Compton scattering
 visualization_3D(file_path + "compton_3D_visualization.png", [ugo, franco], photons, target)
 
-print("End compton")
+# print("End compton")
 print("End")
 

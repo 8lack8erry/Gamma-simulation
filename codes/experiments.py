@@ -71,7 +71,7 @@ def spectroscopy_measurement(number_of_photons, detector: d.Detector, testing: b
     source = s.Source()
     direction = [0, np.sign(detector.position[1]), 0]
     # Generate photons either for testing or normal emission
-    photons = source.testing_photons(number_of_photons, direction) if testing else source.photon_emission(number_of_photons, direction)
+    photons = source.testing_photons(number_of_photons, direction) if testing else source.photon_emission(number_of_photons)
 
     distance = np.linalg.norm(detector.position - source.position)
     detected_energies = []
@@ -97,7 +97,7 @@ def coincidence_photons(number_of_photons: int, gate_detector: d.Detector, spett
     source = s.Source(energies)
     direction = [0, np.sign(gate_detector.position[1]), 0]
     # Generate photons either for testing or normal emission
-    photons = source.testing_photons(number_of_photons, direction) if testing else source.photon_emission(number_of_photons, direction)
+    photons = source.testing_photons(number_of_photons, direction) if testing else source.photon_emission(number_of_photons)
 
     distance_gate = np.linalg.norm(gate_detector.position - source.position)
     distance_spettroscopy = np.linalg.norm(spettroscopy_detector.position - source.position)
@@ -108,7 +108,7 @@ def coincidence_photons(number_of_photons: int, gate_detector: d.Detector, spett
         energy_gate = gamma_detection(photon, gate_detector, distance_gate, step)
 
         if energy_gate > 0:
-            spettroscopy_photon = p.Photon(photon_energy, [0, np.sign(spettroscopy_detector.position[1]), 0])
+            spettroscopy_photon = p.Photon(photon_energy, (-1) * photon.direction)
             coincidence_photons.append(spettroscopy_photon)
     
     return coincidence_photons
@@ -126,7 +126,7 @@ def coincidence_measurement(number_of_photons: int, gate_detector: d.Detector, s
     """
     photons = coincidence_photons(number_of_photons, gate_detector, spettroscopy_detector, testing, step)
     detected_energies = []
-    distance_spettroscopy = np.linalg.norm(spettroscopy_detector.position - spettroscopy_detector.position)
+    distance_spettroscopy = np.linalg.norm(spettroscopy_detector.position) # source in [0, 0, 0]
 
     for photon in photons:
         energy_spettroscopy = gamma_detection(photon, spettroscopy_detector, distance_spettroscopy, step)
@@ -299,7 +299,7 @@ def target_scattering(number_of_photons: int, scattering_angle: float, target: T
     source = s.Source(energies)
     direction = [0, np.sign(gate_detector.position[1]), 0]
     # Generate photons either for testing or normal emission
-    photons = source.testing_photons(number_of_photons, direction) if testing else source.photon_emission(number_of_photons, direction)
+    photons = source.testing_photons(number_of_photons, direction) if testing else source.photon_emission(number_of_photons)
 
     distance_gate_source = np.linalg.norm(gate_detector.position - source.position)
     distance_source_target = np.linalg.norm(target.position - source.position)
@@ -310,7 +310,7 @@ def target_scattering(number_of_photons: int, scattering_angle: float, target: T
         energy_gate = gamma_detection(photon, gate_detector, distance_gate_source, step)
         
         if energy_gate > 0:
-            sibling_photon = p.Photon(photon_energy, [0, np.sign(spettroscopy_detector.position[1]), 0])
+            sibling_photon = p.Photon(photon_energy, (-1) * photon.direction)
             sibling_photon = photon_propagation_to_target(sibling_photon, distance_source_target)
 
             r = 0
