@@ -30,6 +30,10 @@ In addition, the framework integrates 3D visualization tools. These tools allow 
 
 ## Photon Interaction Types
 
+$\epsilon = \frac{E_{\gamma}}{m_{e}}$
+  - $E_{\gamma}$ is the **photon energy**.
+  - $m_{e}$ is the **electron rest mass energy**.
+
 ### 1. Photoelectric Effect
 A photon is completely absorbed by an atom, ejecting an electron with energy equal to the photon's energy minus the binding energy of the electron.
 
@@ -37,9 +41,6 @@ A photon is completely absorbed by an atom, ejecting an electron with energy equ
 The cross-section for the photoelectric effect is computed using a formula involving the atomic number of the detector material and the photon's energy. (form "A Modern Primer to Particle and Nuclear Physycs" by F.Terranova page 69).
 
 The **Photoelectric cross-section** is computed using:
-$\epsilon = \frac{E_{\gamma}}{m_{e}}$
-  - $E_{\gamma}$ is the **photon energy**.
-  - $m_{e}$ is the **electron rest mass energy**.
 
 For $\epsilon << 1$ (low-energy photons):
 
