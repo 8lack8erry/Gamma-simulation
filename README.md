@@ -114,13 +114,17 @@ Represents a photon with energy, direction, and position.
 - **Attributes**: `energy`, `direction`, `position`.
 - **Methods**:
   - `info()`: Print energy and direction.
+    
   - `propagation(distance)`: Compute photon position after traveling a distance.
+    
   - `compton_scattering(angle)`: Calculate scattered photon energy.
+    
   - `klein_nishina(angle)`: Compute the differential cross-section for Compton scattering.
+    
   - `compton_angle()`: Generate random scattering angles using rejection sampling, using the Klein-Nishina probability density function.
-  <div align="center">
-    <img src="Compton_angles_distributions/angle_distributions_Klein_Nishina.png" alt="Klein-Nishina probability density function" width="750">
-  </div>
+    <div align="center">
+      <img src="Compton_angles_distributions/angle_distributions_Klein_Nishina.png" alt="Klein-Nishina probability density function" width="750">
+    </div>
 
 ### 2. `Electron`
 ```python
@@ -130,10 +134,30 @@ Represents an electron with energy, direction, and position.
 - **Attributes**: `energy`, `direction`, `position`.
 - **Methods**:
   - `info()`: Print energy and direction.
+    
   - `propagation(distance)`: Compute electron position after traveling a distance.
+    
   - `compton_scattering(angle, photon)`: Calculate the energy of the electron after Compton scattering.
+ 
+### 3. `Radioactive source`
+```python
+source = Source(energies: dict = {511: 0.903, 1274: 0.097}, position: list[float] = [0, 0, 0], activity: int = 127000)
+```
+Simulates a radioactive source emitting gamma photons. It allows customization of photon energy distributions, spatial positions, and activity levels.
 
-### 3. `Detector`
+- **Attributes**:`energies`, `position`, `activity`.
+- **Methods**:
+    -`info()`: Prints possible photon energies, position, and activity.
+
+    - `random_energies(number_of_photons: int = 1) -> np.ndarray`: Generates random photon energies based on the source's energy probabilities.
+      
+    - `random_directions(number_of_photons: int = 1) -> np.ndarray`: Generates random photon directions as unit vectors.
+      
+    -`photon_emission(number_of_photons: int = 1) -> list`: Generates a list of `Photon` objects with random energies and directions.
+
+    -`testing_photons(self, number_of_photons: int = 1, direction: list = [0, 1, 0]) -> list`: Generates `Photon` objects with fixed directions and random energies.
+
+### 4. `Detector`
 ```python
 detector = Detector(position: list[float], radius: float, width: float, energetic_resolution: float, Z: float = 49.7)
 ```
@@ -144,14 +168,20 @@ Represents a cylindrical gamma-ray detector with customizable position, size, an
 
 - **Methods**:
     - `info()`: Prints position, size, and energy resolution.
+      
     - `will_be_in_detector(point: np.ndarray, direction: np.ndarray) -> bool`: Determines if a particle starting at a given point with a specified direction will hit the detector.
+      
     - `is_in_detector(point: np.ndarray) -> bool`: Checks if a given point is inside the detector's volume.
+      
     - `resolution(energy: float) -> float`: Simulates detector energy resolution by adding Gaussian noise to the true energy.
+      
     - `detection(electron: Electron) -> float`: Simulates the energy detected from an electron interacting with the detector.
+      
     - `draw_detector_3D(ax, axis='y', color='blue', alpha=0.5, label=None)`:Draws a 3D representation of the detector.
+      
     - `draw_detector_2D(ax, plane='xy', color='blue', label=None)`:Draws a 2D projection of the detector on a specified plane.
 
-### 4. `Target`
+### 5. `Target`
 ```python
 target = Target(position: list[float], radius: float, width: float, density: float = 11.34, Z: float = 82)
 ```
@@ -162,24 +192,14 @@ Represents a cylindrical target material with defined position, dimensions, dens
 
 - **Methods**:
     - `info()`: Prints detailed information about the target.
+      
     - `is_in_target(point: np.ndarray) -> bool`:Checks if a given point is inside the target.
+      
     - `attenuation(photon: Photon, distance: float) -> float`:Calculates the attenuation of a gamma photon passing through the target.
+      
     - `draw_target_3D(ax, axis='y', color='grey', alpha=0.5, label=None)`: Draws a 3D representation of the cylindrical target along a specified axis.
+      
     - `draw_target_2D(ax, plane='xy', color='grey', label=None)`: Draws a 2D projection of the target on a specified plane.
-
-### 5. `Radioactive source`
-```python
-source = Source(energies: dict = {511: 0.903, 1274: 0.097}, position: list[float] = [0, 0, 0], activity: int = 127000)
-```
-Simulates a radioactive source emitting gamma photons. It allows customization of photon energy distributions, spatial positions, and activity levels.
-
-- **Attributes**:`energies`, `position`, `activity`.
-- **Methods**:
-    -`info()`: Prints possible photon energies, position, and activity.
-    - `random_energies(number_of_photons: int = 1) -> np.ndarray`: Generates random photon energies based on the source's energy probabilities.
-    - `random_directions(number_of_photons: int = 1) -> np.ndarray`: Generates random photon directions as unit vectors.
-    -`photon_emission(number_of_photons: int = 1) -> list`: Generates a list of `Photon` objects with random energies and directions.
-    -`testing_photons(self, number_of_photons: int = 1, direction: list = [0, 1, 0]) -> list`: Generates `Photon` objects with fixed directions and random energies.
 
 ### 6. `Interaction`
 ```python
@@ -190,7 +210,9 @@ This class allows for the modeling photoelectric effect and Compton scattering, 
 - **Attributes**:`type`.
 - **Methods**:
     - `info()`: Prints the interaction type.
+      
     - `cross_section(photon: Photon, detector)`: Calculates the cross-section for the specified interaction type (photoelectric or Compton).
+      
     - `interaction(photon: p.Photon)`: Simulates the interaction (photoelectric or Compton), returning the resulting product (an electron).
 
 ---
