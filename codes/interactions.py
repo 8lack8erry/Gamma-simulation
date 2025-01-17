@@ -20,17 +20,27 @@ def cross_section_photoelectric(photon: p.Photon, detector) -> float:
     """
     Calculate the photoelectric cross-section for a photon interacting with the detector material.
 
-    :param photon: Photon object containing energy information.
-    :param detector: Detector object containing material properties (e.g., atomic number Z).
-    :return: Photoelectric cross-section in square meters.
-    """
-    epsilon = photon.energy / m_e  # Energy ratio between photon energy and electron rest mass energy
-    if epsilon <= 1:  # Valid approximation for photon energy much less than electron rest mass energy
-        c = 0.665 * np.sqrt(32) * alpha ** 4 * bn  # Empirical constant for low-energy range
-        return c * detector.Z ** 5 / (epsilon ** 3.5)
-    else:  # Valid approximation for photon energy much greater than electron rest mass energy
-        c = 0.665 * (3 / 2) * alpha ** 4 * bn  # Empirical constant for high-energy range
-        return c * detector.Z ** 5 / epsilon
+			 cross_section_thomson = (8 / 3) * np.pi * r_e ** 2  # Thomson scattering cross-section
+				gamma_energy = #energy for the entering photon
+    bond_energy = #binding energy for the electron
+  		gamma = (gamma_energy + m_e - bond_energy)/(m_e)
+    Z = #Z of the target's material
+
+    cross_section = 3/2 * cross_section_thomson * (alpha ** 4) * ((Z * m_e / gamma_energy) ** 5) * (gamma ** 2 - 1) ** (3/2) * (4/3 + gamma * (gamma - 2) / (gamma + 1) * (1 - 1 / (2 * gamma * (gamma ** 2 - 1)** (1/2))* mp.log((gamma + (gamma ** 2 - 1) ** (1/2)) / (gamma - (gamma ** 2 - 1 ) ** (1/2)))))
+
+
+    
+    #:param photon: Photon object containing energy information.
+    #:param detector: Detector object containing material properties (e.g., atomic number Z).
+    #:return: Photoelectric cross-section in square meters.
+    #"""
+    #epsilon = photon.energy / m_e  # Energy ratio between photon energy and electron rest mass energy
+    #if epsilon <= 1:  # Valid approximation for photon energy much less than electron rest mass energy
+        #c = 0.665 * np.sqrt(32) * alpha ** 4 * bn  # Empirical constant for low-energy range
+        #return c * detector.Z ** 5 / (epsilon ** 3.5)
+    #else:  # Valid approximation for photon energy much greater than electron rest mass energy
+        #c = 0.665 * (3 / 2) * alpha ** 4 * bn  # Empirical constant for high-energy range
+        #return c * detector.Z ** 5 / epsilon
 
 def cross_section_compton(photon: p.Photon, detector) -> float:
     """
