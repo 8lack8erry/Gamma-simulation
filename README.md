@@ -126,7 +126,7 @@ $$
 
 
 <div align="center">
-  <img src="plots/interaction_probability/cross_section_&_interaction_probability.png" alt="Cross Section" width="600">
+  <img src="plots/Interaction_probability/cross_section_&_interaction_probability.png" alt="Cross Section" width="600">
 </div>  
 
 
