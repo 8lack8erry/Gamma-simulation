@@ -162,7 +162,7 @@ Represents a photon with energy, direction, and position.
     
   - `compton_angle()`: Generate random scattering angles using rejection sampling, using the Klein-Nishina probability density function.
     <div align="center">
-      <img src="plots/compton_angles_distributions/angle_distributions_Klein_Nishina.png" alt="Klein-Nishina probability density function" width="750">
+      <img src="plots/compton_angles_distributions/angle_distributions_Klein_Nishina.png" alt="Klein-Nishina probability density function" width="850">
     </div>
 
 ### 2. `Electron`
