@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import libraries.particles as p
-import libraries.interactions as i
-import libraries.target as t
+from lib import particles as p
+from lib import interactions as i
+from lib import target as t
 
 # File path to save the output plots
 file_path = "/mnt/c/Users/User/Desktop/info/Compton/Simulation/plots/cross_sections/"
