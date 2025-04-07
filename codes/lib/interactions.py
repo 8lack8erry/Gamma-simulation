@@ -1,6 +1,7 @@
 import numpy as np
 import random
 from . import particles as p
+from . import detector as d
 
 # Physical constants
 r_e = 2.817e-13  # Classical electron radius in cm
