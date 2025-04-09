@@ -35,7 +35,7 @@ if os.path.isdir(file_path + "data/"):
             file_names.append(file_path + "data/" + file_name)
 
 # Process each file
-for file_name in tqdm(file_names, desc="Processing files"):
+for file_name in file_names:
     # Extract run number from filename
     run_number = int(os.path.basename(file_name).split("_")[0])
     sim_runs.append(run_number)
@@ -132,4 +132,5 @@ plt.ylabel('Counts')
 plt.legend(fontsize=12)
 plt.grid(True)
 plt.savefig(file_path + "plots/photon_energies.png")
+
 

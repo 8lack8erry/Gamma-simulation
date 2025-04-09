@@ -5,6 +5,7 @@ This repository provides a comprehensive simulation framework for modeling and a
 ## Dimension of the physical variables
 - Length in **cm**.
 - Energy in **keV**.
+- Masses in **g**.
 
 ## Table of Contents
 
